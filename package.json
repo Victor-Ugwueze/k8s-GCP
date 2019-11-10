@@ -1,0 +1,23 @@
+{
+  "name": "GCP-works",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Victor-Ugwueze/GCP-w.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Victor-Ugwueze/GCP-w/issues"
+  },
+  "homepage": "https://github.com/Victor-Ugwueze/GCP-w#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
