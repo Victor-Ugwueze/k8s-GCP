@@ -56,7 +56,7 @@ jobs:
       - run:
           name: Build and deploy App
           command: |
-            chmod +x .circleci/build_deploy.sh
+            chmod +x .circleci/build-and-deploy.sh
             .circleci/build_deploy.sh main
 
 workflows:
