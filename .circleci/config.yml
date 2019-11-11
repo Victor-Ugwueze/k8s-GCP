@@ -53,7 +53,7 @@ jobs:
             chmod +x .circleci/gcloud_login.sh
             .circleci/gcloud_login.sh main
       - run:
-          name: Build and deploy travela Backend Application
+          name: Build and deploy App
           command: |
             chmod +x .circleci/build_deploy.sh
             .circleci/build_deploy.sh main
