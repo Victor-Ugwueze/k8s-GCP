@@ -3,9 +3,8 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
-jobs:
-  build:
-    docker:
+defaults: &defaults
+  docker:
       # specify the version you desire here
       - image: gcr.io/identity-test-246814/node-gcloud-sdk
         auth:
@@ -14,6 +13,9 @@ jobs:
 
     working_directory: ~/repo
 
+jobs:
+  build:
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
