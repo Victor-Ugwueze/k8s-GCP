@@ -5,9 +5,9 @@ source $ROOT_DIR/.circleci/utils.sh
 
 # checkout
 buildTagAndPushDockerImage() {
-    require 'DOCKER_REGISTRY' $DOCKER_REGISTRY
-    require 'PROJECT_ID' $PROJECT_ID
-    require 'SERVICE_KEY_PATH' $SERVICE_KEY_PATH
+    require DOCKER_REGISTRY $DOCKER_REGISTRY
+    require PROJECT_ID $PROJECT_ID
+    require SERVICE_KEY_PATH $SERVICE_KEY_PATH
 
     # gcr.io/andela-learning/travela-backend
     IMAGE_NAME=$DOCKER_REGISTRY/$PROJECT_ID/$PROJECT_NAME
