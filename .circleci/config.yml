@@ -13,6 +13,15 @@ defaults: &defaults
 
   working_directory: ~/repo
 
+install_npm_packages: &install_npm_packages
+  run:
+    name: Install Npm Dependencies
+    command: yarn install
+
+attach_workspace: &attach_workspace
+  attach_workspace:
+    at: ~/travela-backend
+
 jobs:
   build:
     <<: *defaults
