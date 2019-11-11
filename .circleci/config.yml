@@ -6,7 +6,7 @@ version: 2
 defaults: &defaults
   docker:
       # specify the version you desire here
-    - image: gcr.io/identity-test-246814/node-gcloud-sdk
+    - image: gcr.io/identity-test-246814/node-gcloud-sdk:0.1
       auth:
         username: _json_key
         password: $GCLOUD_SERVICE_KEY
