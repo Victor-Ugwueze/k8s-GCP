@@ -15,4 +15,6 @@ RUN yarn install
 
 COPY index.js /usr/app
 
-CMD [ "npm", "start" ]
+EXPOSE 3000
+
+CMD [ "yarn", "start" ]
