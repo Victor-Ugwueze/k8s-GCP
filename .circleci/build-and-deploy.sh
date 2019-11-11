@@ -40,8 +40,6 @@ buildLintAndDeployK8sConfiguration(){
     require PROJECT_NAME $PROJECT_NAME
     require PROJECT_ID $PROJECT_ID
     envsubst < $ROOT_DIR/.circleci/k8s-deploy.yml > ${HOME}/patched_k8s.yml
-    kubectl apply -f $ROOT_DIR/.circleci/k8s-deploy.yml
-
     info "Initiating deployment for image $TAGGED_IMAGE to $ENVIRONMENT environment"
     kubectl apply -f ${HOME}/patched_k8s.yml
     is_success "$TAGGED_IMAGE successfully deployed"
