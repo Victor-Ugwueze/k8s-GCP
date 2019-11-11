@@ -60,11 +60,10 @@ jobs:
 
 workflows:
   version: 2
-  test_build_deploy:
+  build_deploy:
     jobs:
       - build:
           type: approval
-      - build_application_artifacts:
       - deploy:
           requires:
             - build
