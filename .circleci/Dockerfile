@@ -14,3 +14,5 @@ COPY yarn.lock /usr/app
 RUN yarn install
 
 COPY index.js /usr/app
+
+CMD [ "npm", "start" ]
