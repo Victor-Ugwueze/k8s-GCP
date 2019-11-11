@@ -17,6 +17,6 @@ COPY index.js /usr/app
 
 EXPOSE 3000
 
-RUN ls
+RUN ls /usr/app
 
 CMD [ "yarn", "start" ]
