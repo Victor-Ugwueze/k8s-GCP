@@ -1,0 +1,49 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: gcr.io/identity-test-246814/node-gcloud-sdk
+        auth:
+          username: _json_key
+          password: $GCLOUD_SERVICE_KEY
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # run tests!
+      - run: yarn test
+  deploy:
+    <<: *defaults
+    steps:
+      - setup_remote_docker
+      - *attach_workspace
+      - run:
+          name: Install and setup K8s deployment requirements
+          command: |
+            chmod +x .circleci/gcloud_login.sh
+            .circleci/gcloud_login.sh main
+      - run:
+          name: Build and deploy travela Backend Application
+          command: |
+            chmod +x .circleci/build_deploy.sh
+            .circleci/build_deploy.sh main
+      - *send_failure_notification
