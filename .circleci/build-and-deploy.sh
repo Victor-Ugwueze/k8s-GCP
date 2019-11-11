@@ -37,7 +37,7 @@ buildTagAndPushDockerImage() {
 
 buildLintAndDeployK8sConfiguration(){
     envsubst < ${HOME}/project/k8s.yml > ${HOME}/patched_k8s.yml
-    kubectl apply -f ROOT_DIR/.circleci/k8s-deploy.yml
+    kubectl apply -f $ROOT_DIR/.circleci/k8s-deploy.yml
 
     info "Initiating deployment for image $TAGGED_IMAGE to $ENVIRONMENT environment"
     kubectl apply -f ${HOME}/patched_k8s.yml
