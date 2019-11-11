@@ -57,3 +57,14 @@ jobs:
           command: |
             chmod +x .circleci/build_deploy.sh
             .circleci/build_deploy.sh main
+
+workflows:
+  version: 2
+  test_build_deploy:
+    jobs:
+      - build:
+          type: approval
+      - build_application_artifacts:
+      - deploy:
+          requires:
+            - build
