@@ -14,7 +14,9 @@ buildTagAndPushDockerImage() {
     TAGGED_IMAGE=$IMAGE_NAME:${CIRCLE_SHA1}
     DOCKER_USERNAME=${DOCKER_USERNAME:-_json_key}
 
-    info "Build docker image for travela application"
+    info "Build docker image for app"
+    info $IMAGE_NAME
+  
     docker build -t $IMAGE_NAME -f $ROOT_DIR/.circleci/Dockerfile .
 
     info "Tagging built docker image as $TAGGED_IMAGE"
