@@ -10,7 +10,7 @@ source $ROOT_DIR/scripts/utils.sh
 # }
 
 sshToInstance() {
-  gcloud compute scp travis-app-vm --recurse $TRAVIS_BUILD_DIR:~/
+  gcloud compute scp travis-app-vm --recurse $TRAVIS_BUILD_DIR:travis-app-vm/
 }
 
 
