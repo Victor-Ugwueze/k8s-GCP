@@ -28,5 +28,4 @@ script:
   - chmod +x scripts/travis-setup.sh
   - scripts/travis-setup.sh main
   - chmod +x scripts/travis-build-deploy.sh
-  - scripts/travis-build-deploy.sh
-  
+  - scripts/travis-build-deploy.sh main
