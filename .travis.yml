@@ -25,5 +25,5 @@ before_install:
 # Insert your own install + script below.
 
 script: 
-  - chmod +x scripts/setup-travis.sh
-   - scripts/setup-travis.sh
+  - chmod +x $HOME/scripts/setup-travis.sh
+   - $HOME/scripts/setup-travis.sh main
