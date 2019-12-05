@@ -10,13 +10,9 @@ sshToInstance() {
   sudo apt-get install nginx-light
 }
 
-builAndDeployK8sConfiguration(){
-   
-}
 
 main() {
-  buildTagAndPushDockerImage
-  buildLintAndDeployK8sConfiguration
+  sshToInstance
 }
 
 $@
