@@ -12,6 +12,8 @@ source $ROOT_DIR/scripts/utils.sh
 sshToInstance() {
   ls $TRAVIS_BUILD_DIR/
   gcloud compute scp --recurse $TRAVIS_BUILD_DIR/  travis-app-vm:~
+  sudo apt-get update
+  sudo apt-get install nginx-light -y
 }
 
 
