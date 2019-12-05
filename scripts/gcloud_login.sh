@@ -1,7 +1,7 @@
 #!/bin/bash
 ROOT_DIR=$(pwd)
 
-source $ROOT_DIR/.circleci/utils.sh
+source $ROOT_DIR/scripts/utils.sh
 
 activateServiceAccount() {
     require PROJECT_ID $PROJECT_ID

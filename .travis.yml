@@ -23,3 +23,7 @@ before_install:
 - gcloud components update kubectl
 - gcloud version
 # Insert your own install + script below.
+
+script: 
+  - chmod +x scripts/setup-travis.sh
+   - scripts/setup-travis.sh
