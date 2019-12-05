@@ -26,4 +26,4 @@ before_install:
 
 script: 
   - chmod +x scripts/travis-setup.sh
-   - scripts/travis-setup.sh main
+  - scripts/travis-setup.sh main
