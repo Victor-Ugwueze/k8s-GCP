@@ -10,8 +10,6 @@ buildTagAndPushDockerImage() {
     require SERVICE_KEY_PATH $SERVICE_KEY_PATH
     require PROJECT_NAME $PROJECT_NAME
 
-    # gcr.io/andela-learning/travela-backend
-    # IMAGE_NAME=$DOCKER_REGISTRY/$PROJECT_ID/$PROJECT_NAME
     IMAGE_NAME="gcr.io/$PROJECT_ID/$PROJECT_NAME"
     TAGGED_IMAGE=$IMAGE_NAME:${CIRCLE_SHA1}
     DOCKER_USERNAME=${DOCKER_USERNAME:-_json_key}
@@ -36,7 +34,7 @@ buildTagAndPushDockerImage() {
 
 }
 
-buildLintAndDeployK8sConfiguration(){
+builAndDeployK8sConfiguration(){
     require PROJECT_NAME $PROJECT_NAME
     require PROJECT_ID $PROJECT_ID
     envsubst < $ROOT_DIR/.circleci/k8s-deploy.yml > ${HOME}/patched_k8s.yml
