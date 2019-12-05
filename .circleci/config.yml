@@ -51,14 +51,14 @@ jobs:
       - run:
           name: Install and setup K8s deployment requirements
           command: |
-            chmod +x .circleci/gcloud_login.sh
-            .circleci/gcloud_login.sh main
+            chmod +x scripts/gcloud_login.sh
+            .scripts/gcloud_login.sh main
       - run:
           name: Build and deploy App
           command: |
             apk add -qq -y gettext
-            chmod +x .circleci/build-and-deploy.sh
-            .circleci/build-and-deploy.sh main
+            chmod +x scripts/build-and-deploy.sh
+            scripts/build-and-deploy.sh main
 
 workflows:
   version: 2
