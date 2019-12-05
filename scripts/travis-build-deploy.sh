@@ -4,13 +4,13 @@ ROOT_DIR=$(pwd)
 source $ROOT_DIR/scripts/utils.sh
 
 # checkout
-installServer(){
-  sudo apt-get update
-  sudo apt-get install nginx-light -y
-}
+# installServer(){
+  # sudo apt-get update
+  # sudo apt-get install nginx-light -y
+# }
 
 sshToInstance() {
-  gcloud compute ssh travis-app-vm installServer
+  gcloud compute scp travis-app-vm --recurse $TRAVIS_BUILD_DIR:~/
 }
 
 
