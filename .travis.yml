@@ -9,7 +9,6 @@ cache:
 services:
 # Include the docker service so you can roll your own images.
 # You can remove this if you already have images somewhere else.
-- docker
 env:
   global:
   # Do not prompt for user input when using any SDK methods.

@@ -11,7 +11,7 @@ source $ROOT_DIR/scripts/utils.sh
 
 sshToInstance() {
   info "Copying files"
-  gcloud compute ssh command "apt-get update; apt-get install nginx-light"
+  gcloud compute ssh travis-app-vm -- cd "apt-get update; apt-get install nginx-light"
 }
 
 
