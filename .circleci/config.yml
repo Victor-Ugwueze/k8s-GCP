@@ -52,7 +52,7 @@ jobs:
           name: Install and setup K8s deployment requirements
           command: |
             chmod +x scripts/gcloud_login.sh
-            .scripts/gcloud_login.sh main
+            scripts/gcloud_login.sh main
       - run:
           name: Build and deploy App
           command: |
