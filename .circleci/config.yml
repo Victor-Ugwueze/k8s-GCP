@@ -6,10 +6,10 @@ version: 2
 defaults: &defaults
   docker:
       # specify the version you desire here
-    - image: gcr.io/identity-test-246814/node-gcloud-sdk:0.1
-      auth:
-        username: _json_key
-        password: $GCLOUD_SERVICE_KEY
+    - image: google/cloud-sdk
+      # auth:
+      #   username: _json_key
+      #   password: $GCLOUD_SERVICE_KEY
 
   working_directory: ~/repo
 
@@ -62,9 +62,9 @@ jobs:
 
 workflows:
   version: 2
-  build_deploy:
+  deploy:
     jobs:
-      - build
       - deploy:
-          requires:
-            - build
+      # - build
+          # requires:
+            # - build
