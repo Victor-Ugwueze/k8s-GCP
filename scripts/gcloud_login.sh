@@ -16,7 +16,7 @@ activateServiceAccount() {
     gcloud auth activate-service-account --key-file $SERVICE_KEY_PATH
     gcloud --quiet config set project ${PROJECT_ID}
     gcloud --quiet config set compute/zone ${COMPUTE_ZONE}
-    gcloud --quiet container clusters get-credentials ${CLUSTER_NAME}
+    # gcloud --quiet container clusters get-credentials ${CLUSTER_NAME}
 }
 
 main(){
