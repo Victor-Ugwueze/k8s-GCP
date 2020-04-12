@@ -4,4 +4,4 @@ sudo git pull
 
 sudo npm i
 
-npm start
+pm3 start index.js
