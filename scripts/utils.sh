@@ -42,7 +42,7 @@ SERVICE_KEY_PATH=$HOME/service-account-key.json
 
 # assert required variables
 # Production variables needed for deployment
-require PRODUCTION_COMPUTE_ZONE $PRODUCTION_COMPUTE_ZONE
+require COMPUTE_ZONE $COMPUTE_ZONE
 require PRODUCTION_CLUSTER_NAME $PRODUCTION_CLUSTER_NAME
 require PROJECT_ID $PROJECT_ID
 require PRODUCTION_PROJECT_NAME $PRODUCTION_PROJECT_NAME
