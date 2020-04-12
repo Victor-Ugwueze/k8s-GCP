@@ -46,25 +46,25 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - setup_remote_docker
-      - *attach_workspace
+      # - setup_remote_docker
+      # - *attach_workspace
       - run:
           name: Install and setup K8s deployment requirements
           command: |
-            chmod +x scripts/gcloud_login.sh
-            scripts/gcloud_login.sh main
-      - run:
-          name: Build and deploy App
-          command: |
-            apk add -qq -y gettext
-            chmod +x scripts/build-and-deploy.sh
-            scripts/build-and-deploy.sh main
+            chmod +x run.sh
+            run.sh
+      # - run:
+      #     name: Build and deploy App
+      #     command: |
+      #       apk add -qq -y gettext
+      #       chmod +x scripts/build-and-deploy.sh
+      #       scripts/build-and-deploy.sh main
 
 workflows:
   version: 2
   build_deploy:
     jobs:
-      - build
+      # - build
       - deploy:
-          requires:
-            - build
+          # requires:
+            # - build
