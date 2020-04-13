@@ -5,4 +5,4 @@ sudo git pull
 
 sudo npm i
 
-pm3 start index.js
+pm2 restart index.js
