@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Victor-Ugwueze/GCP-w#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jest": "^24.9.0",
     "pm2": "^4.2.3"
   }
